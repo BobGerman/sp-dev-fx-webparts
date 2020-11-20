@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { IPhoto } from '../model/IPhoto';
-
+import styles from './FieldVisits.module.scss';
 import { IPhotoService } from '../services/PhotoService/IPhotoService';
 
 export interface IPhotosProps {
@@ -32,7 +32,10 @@ export class Photos extends React.Component<IPhotosProps, IPhotosState> {
                 if (this.state.photos && this.state.photos.length > 0) {
 
                     return (
-                        <div>
+                        <div className={styles.photos}>
+                            <div className={styles.genericHeading}>
+                                On-site photos
+                            </div>
                             {this.state.photos.map(photo => (
                                 <div>
                                     <img src={photo.url} width='200px' /><br />
@@ -44,7 +47,7 @@ export class Photos extends React.Component<IPhotosProps, IPhotosState> {
 
                 } else {
 
-                    return (<div>No photos for this property</div>);
+                    return (<div className={styles.photos}>No photos for this property</div>);
 
                 }
 

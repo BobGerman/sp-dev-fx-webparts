@@ -69,7 +69,7 @@ export class Activities extends React.Component<IActivityProps, IActivityState> 
                         </div>);
         
                 } else {
-                    return (<div>No documents found</div>);
+                    return (<div className={styles.activities}>No transactions found</div>);
                 }
                 
             } else {
@@ -85,7 +85,7 @@ export class Activities extends React.Component<IActivityProps, IActivityState> 
             }
         } else {
             return (
-                <div>No visit selected</div>
+                <div className={styles.activities}>No visit selected</div>
             );
         }
     }

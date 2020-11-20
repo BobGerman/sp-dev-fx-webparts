@@ -2,6 +2,8 @@
 
 .fieldVisits {
 
+  font-family: sans-serif;
+  
   .fieldVisitsRow {
     @include ms-Grid-row;
   }
@@ -18,6 +20,14 @@
     padding: 10px;
   }
 
+}
+
+.genericHeading {
+  @include ms-Grid-row;
+  color: $ms-color-white;
+  background-color: $ms-color-themeDark;
+  padding: 3pt 3pt 3pt 10pt;
+  margin-bottom: 6pt;
 }
 
 .userTabs {
@@ -44,6 +54,7 @@
 
   border-top-style: solid;
   border-width: 1px;
+  padding-left: 3pt;
 
   .visitListRow {
     @include ms-Grid-row;
@@ -51,6 +62,7 @@
     border-top-style: hidden;
     border-bottom-style: solid;
     border-width: 1px;
+    padding: 3pt 3pt 6pt 0;
   }
 
   .visitListRow:hover {
@@ -141,22 +153,22 @@
 
 .documents {
 
-  border-top-style: solid;
-  border-width: 1px;
-  padding: 10px;
+  margin-top: 6pt;
 
   .documentsRow {
     @include ms-Grid-row;
     border-color: $ms-color-neutralLight;
     border-bottom-style: solid;
     border-width: 1px;
+    padding: 3pt;
   }
 
   .documentsHeadingRow {
     @include ms-Grid-row;
     color: $ms-color-white;
     background-color: $ms-color-themeDark;
-    padding: 5px;
+    padding: 3pt;
+    margin-bottom: 6pt;
   }
 
   .documentsRow:hover {
@@ -188,22 +200,22 @@
 
 .activities {
 
-  border-top-style: solid;
-  border-width: 1px;
-  padding: 10px;
+  margin-top: 6pt;
 
   .activitiesRow {
     @include ms-Grid-row;
     border-color: $ms-color-neutralLight;
     border-bottom-style: solid;
     border-width: 1px;
+    padding: 3pt;
   }
 
   .activitiesHeadingRow {
     @include ms-Grid-row;
     color: $ms-color-white;
     background-color: $ms-color-themeDark;
-    padding: 5px;
+    padding: 3pt;
+    margin-bottom: 6pt;
   }
 
   .activitiesRow:hover {
@@ -212,16 +224,16 @@
   
   .activitiesDateColumn {
     @include ms-Grid-col;
-    @include ms-sm4;
-    @include ms-md3;
-    @include ms-lg2;
+    @include ms-sm5;
+    @include ms-md4;
+    @include ms-lg3;
   };
 
   .activitiesNameColumn {
     @include ms-Grid-col;
-    @include ms-sm4;
-    @include ms-md3;
-    @include ms-lg3;
+    @include ms-sm3;
+    @include ms-md2;
+    @include ms-lg2;
   };
 
   .activitiesAmountColumn {
@@ -242,8 +254,7 @@
 
 .postToChannel {
 
-  margin: 5px;
-  @include ms-Grid;
+  margin-top: 6pt;
 
   .postToChannelRow {
     @include ms-Grid-row;
@@ -278,4 +289,10 @@
     padding: 2px;
     height: 60px;
   }
+}
+
+.photos {
+  
+  margin-top: 6pt;
+  
 }

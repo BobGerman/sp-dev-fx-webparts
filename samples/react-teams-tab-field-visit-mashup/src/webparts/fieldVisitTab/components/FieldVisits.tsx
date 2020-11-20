@@ -155,7 +155,6 @@ export class FieldVisits extends React.Component<IFieldVisitsProps, IFieldVisits
             <div className={styles.fieldVisitsRightColumn}>
               <Weather service={this.props.weatherService}
                 country={country} postalCode={postalCode} />
-              <CompanyInfo visit={this.state.selectedVisit} />
               <PostToChannel channelId={this.props.channelId}
                 entityId={this.props.entityId}
                 teamsApplicationId={this.props.teamsApplicationId}
@@ -169,6 +168,7 @@ export class FieldVisits extends React.Component<IFieldVisitsProps, IFieldVisits
                 postalCode={postalCode}
                 conversationService={this.props.conversationService}
                 mapService={this.props.mapService} />
+              <CompanyInfo visit={this.state.selectedVisit} />
               <Map service={this.props.mapService}
                 address={address} city={city} state={state}
                 country={country} postalCode={postalCode} />
@@ -177,7 +177,7 @@ export class FieldVisits extends React.Component<IFieldVisitsProps, IFieldVisits
         </div>
       );
     } else {
-      return (<div>Loading...</div>);
+      return (<div className={styles.fieldVisits}>Loading...</div>);
     }
   }
 

@@ -103,7 +103,7 @@ export default class MapService implements IMapService {
 
         const apiKey = this.getMapApiKey();
 
-        return `https://dev.virtualearth.net/REST/v1/Imagery/Map/Road/${latitude},${longitude}/16?mapSize=450,600&pp=${latitude},${longitude}&key=${apiKey}`;
+        return `https://dev.virtualearth.net/REST/v1/Imagery/Map/Road/${latitude},${longitude}/16?mapSize=450,450&pp=${latitude},${longitude}&key=${apiKey}`;
     }
 
 }

@@ -37,6 +37,9 @@ export class PostToChannel extends React.Component<IPostToChannelProps, IPostToC
 
             return (
                 <div className={styles.postToChannel}>
+                    <div className={styles.genericHeading}>
+                        Post to channel
+                    </div>
                     <div className={styles.postToChannelRow}>
                         <div className={styles.postToChannelTextColumn}>
                             <textarea className={styles.postToChannelTextArea}

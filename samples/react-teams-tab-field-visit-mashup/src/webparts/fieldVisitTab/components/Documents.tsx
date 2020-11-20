@@ -67,7 +67,7 @@ export class Documents extends React.Component<IDocumentProps, IDocumentState> {
                         </div>);
         
                 } else {
-                    return (<div>No documents found</div>);
+                    return (<div className={styles.documents}>No documents found</div>);
                 }
                 
             } else {
