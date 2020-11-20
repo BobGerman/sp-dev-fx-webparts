@@ -6,6 +6,6 @@ export interface IMapService {
         Promise<IMapLocation>;
     getMapApiKey (): string;
     getMapImageUrl (address: string, city: string, state: string,
-        country: string, postalCode: string):
+        country: string, postalCode: string, height?: number, width?: number):
         Promise<string>;
 }

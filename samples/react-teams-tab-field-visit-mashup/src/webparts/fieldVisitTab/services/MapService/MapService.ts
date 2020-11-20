@@ -52,7 +52,7 @@ export default class MapService implements IMapService {
     }
 
     public getMapImageUrl(address: string, city: string, state: string,
-        country: string, postalCode: string):
+        country: string, postalCode: string, height = 450, width = 450):
         Promise<string> {
 
         return new Promise<string>((resolve, reject) => {
@@ -67,7 +67,7 @@ export default class MapService implements IMapService {
                 if (this.locationSignature === locationSignature) {
 
                     // If here, the cached location is valid
-                    resolve (this.getMapImageUrlFromLocation(this.location));
+                    resolve (this.getMapImageUrlFromLocation(this.location, height, width));
 
                 } else {
 
@@ -76,7 +76,7 @@ export default class MapService implements IMapService {
                         .then((location: IMapLocation) => {
                             this.location = location;
                             this.locationSignature = locationSignature;
-                            resolve (this.getMapImageUrlFromLocation(this.location));
+                            resolve (this.getMapImageUrlFromLocation(this.location, height, width));
                         })
                         .catch ((error: string) => {
                             resolve('#');
@@ -94,7 +94,7 @@ export default class MapService implements IMapService {
         return `${address}**${city}**${state}**${country}**${postalCode}`;
     }
 
-    private getMapImageUrlFromLocation(location: IMapLocation) {
+    private getMapImageUrlFromLocation(location: IMapLocation, height: number, width: number) {
 
         const coordinates =
             location.resourceSets[0].resources[0].point.coordinates;
@@ -103,7 +103,7 @@ export default class MapService implements IMapService {
 
         const apiKey = this.getMapApiKey();
 
-        return `https://dev.virtualearth.net/REST/v1/Imagery/Map/Road/${latitude},${longitude}/16?mapSize=450,450&pp=${latitude},${longitude}&key=${apiKey}`;
+        return `https://dev.virtualearth.net/REST/v1/Imagery/Map/Road/${latitude},${longitude}/16?mapSize=${width},${height}&pp=${latitude},${longitude}&key=${apiKey}`;
     }
 
 }

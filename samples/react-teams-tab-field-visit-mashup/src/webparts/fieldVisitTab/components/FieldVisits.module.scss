@@ -161,6 +161,10 @@
     border-bottom-style: solid;
     border-width: 1px;
     padding: 3pt;
+    a {
+      color: black;
+      font-weight: bold;
+    }
   }
 
   .documentsHeadingRow {
@@ -279,8 +283,8 @@
   }
 
   .postToChannelTextArea {
-    width: 100%;
-    padding: 2px;
+    width: 90%;
+    padding: 6px;
     height: 60px;
   }
 
